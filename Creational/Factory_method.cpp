@@ -106,7 +106,7 @@ int main() {
     creators.emplace_back(new OgreCreator(6));
     creators.emplace_back(new DragonCreator(10));
     for(auto &i: creators)
-        i->update_diff(3);
+        i->update_diff(1);
     vector<double> last_positions(creators.size(), creators[0]->get_priority());
     std::cout << last_positions[0] << ' ';
     for (int i = 1; i < creators.size(); ++i) {
@@ -116,7 +116,6 @@ int main() {
     std::cout << '\n';
     for (int i = 0; i < 10; ++i) {
         double temp = (double)(rand() % (int)(10*last_positions[last_positions.size() - 1] + 1))/10;
-        std::cout << temp << ' ';
         for(int j=0; j<last_positions.size(); ++j){
             if(temp<last_positions[j]) {
                 creators[j]->creating();
@@ -126,4 +125,3 @@ int main() {
     }
     return 0;
 }
-
