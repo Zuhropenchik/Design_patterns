@@ -78,7 +78,7 @@ public:
     }
 
     void description() {
-        std::cout << "Creature is " << _color << " and his skin is " << _cover << '\n';
+        std::cout << "Creature is " << _color << " and its skin is " << _cover << '\n';
         std::cout << _legs.size() << " legs:\n";
         for (auto& i: _legs)
             std::cout << i.get_type() << ' ';
