@@ -5,7 +5,7 @@ public:
     virtual void drive() = 0;
 };
 
-class Car : public ITransport {
+class Car : public ITransport { 
 public:
     void drive() override {
         std::cout << "Car is driving\n";
@@ -26,7 +26,7 @@ public:
     }
 };
 
-class Saddle : public ITransport {
+class Saddle : public ITransport { //Adapter
 public:
     explicit Saddle(Horse horse) : _horse(horse) {}
 
