@@ -63,6 +63,7 @@ public:
     explicit List(const std::string &content) : Complex(content) {}
 
     void print() override {
+        std::cout << "\"" << _content << "\":\n";
         std::cout << "[\n";
         for (auto &comp: components)
             comp->print();
@@ -75,6 +76,7 @@ public:
     explicit Class(const std::string &content) : Complex(content) {}
 
     void print() override {
+        std::cout << "\"" << _content << "\":\n";
         std::cout << "{\n";
         for (auto &comp: components)
             comp->print();
@@ -86,7 +88,7 @@ int main() {
     Class student("Student");
     student.add_comp(new Variable("Name", "Zakhar"));
     student.add_comp(new Variable("Age", "19"));
-    List *marks = new List("marks:");
+    List *marks = new List("marks");
     marks->add_comp(new Variable("Math", "4"));
     marks->add_comp(new Variable("ITC", "5"));
     marks->add_comp(new Variable("English", "4"));
